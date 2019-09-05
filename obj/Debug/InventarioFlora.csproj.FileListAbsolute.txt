@@ -1,0 +1,6 @@
+C:\Programas\Projetos\InventarioFlora\obj\Debug\InventarioFlora.csprojResolveAssemblyReference.cache
+C:\Programas\Projetos\InventarioFlora\bin\Debug\InventarioFlora.exe.config
+C:\Programas\Projetos\InventarioFlora\bin\Debug\InventarioFlora.exe
+C:\Programas\Projetos\InventarioFlora\bin\Debug\InventarioFlora.pdb
+C:\Programas\Projetos\InventarioFlora\obj\Debug\InventarioFlora.exe
+C:\Programas\Projetos\InventarioFlora\obj\Debug\InventarioFlora.pdb

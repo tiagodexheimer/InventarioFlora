@@ -1,21 +1,21 @@
 ﻿/*
  * User: Tiago Dexheimer
- * Date: 27/08/2019
- * Time: 13:58
+ * Date: 05/09/2019
+ * Time: 16:22
+ * 
  */
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace InventarioFlora
+namespace InventarioFlora.Formularios
 {
 	/// <summary>
-	/// Description of MainForm.
+	/// Description of FrmEspecie.
 	/// </summary>
-	public partial class MainForm : Form
+	public partial class FrmEspecie : Form
 	{
-		public MainForm()
+		public FrmEspecie()
 		{
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
