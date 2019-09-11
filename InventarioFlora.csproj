@@ -68,10 +68,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\BancoDeDados.cs" />
     <Compile Include="Classes\Especie.cs" />
     <Compile Include="Formularios\FrmEspecie.cs" />
     <Compile Include="Formularios\FrmEspecie.Designer.cs">
       <DependentUpon>FrmEspecie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmIncluirEspecie.cs" />
+    <Compile Include="Formularios\FrmIncluirEspecie.Designer.cs">
+      <DependentUpon>FrmIncluirEspecie.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs" />
     <Compile Include="MainForm.Designer.cs">
@@ -88,6 +93,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Formularios\FrmEspecie.resx">
       <DependentUpon>FrmEspecie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmIncluirEspecie.resx">
+      <DependentUpon>FrmIncluirEspecie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

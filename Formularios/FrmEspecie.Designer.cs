@@ -13,9 +13,9 @@ namespace InventarioFlora.Formularios
 		/// Designer variable used to keep track of non-visual components.
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
-		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.DataGridView dataGridEspecie;
 		private System.Windows.Forms.Button btnAdicionar;
-		private System.Windows.Forms.Button btnEditar;
+		private System.Windows.Forms.Button btnAtualizar;
 		private System.Windows.Forms.Button btnExcluir;
 		
 		/// <summary>
@@ -39,46 +39,42 @@ namespace InventarioFlora.Formularios
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.dataGridEspecie = new System.Windows.Forms.DataGridView();
 			this.btnAdicionar = new System.Windows.Forms.Button();
-			this.btnEditar = new System.Windows.Forms.Button();
+			this.btnAtualizar = new System.Windows.Forms.Button();
 			this.btnExcluir = new System.Windows.Forms.Button();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridEspecie)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// dataGridView1
+			// dataGridEspecie
 			// 
-			this.dataGridView1.AllowUserToAddRows = false;
-			this.dataGridView1.AllowUserToDeleteRows = false;
-			this.dataGridView1.AllowUserToOrderColumns = true;
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.ReadOnly = true;
-			this.dataGridView1.Size = new System.Drawing.Size(260, 150);
-			this.dataGridView1.TabIndex = 0;
+			this.dataGridEspecie.Location = new System.Drawing.Point(12, 12);
+			this.dataGridEspecie.Name = "dataGridEspecie";
+			this.dataGridEspecie.Size = new System.Drawing.Size(991, 375);
+			this.dataGridEspecie.TabIndex = 0;
 			// 
 			// btnAdicionar
 			// 
-			this.btnAdicionar.Location = new System.Drawing.Point(13, 169);
+			this.btnAdicionar.Location = new System.Drawing.Point(12, 393);
 			this.btnAdicionar.Name = "btnAdicionar";
 			this.btnAdicionar.Size = new System.Drawing.Size(75, 23);
 			this.btnAdicionar.TabIndex = 1;
 			this.btnAdicionar.Text = "Adicionar";
 			this.btnAdicionar.UseVisualStyleBackColor = true;
+			this.btnAdicionar.Click += new System.EventHandler(this.BtnAdicionarClick);
 			// 
-			// btnEditar
+			// btnAtualizar
 			// 
-			this.btnEditar.Location = new System.Drawing.Point(95, 169);
-			this.btnEditar.Name = "btnEditar";
-			this.btnEditar.Size = new System.Drawing.Size(75, 23);
-			this.btnEditar.TabIndex = 2;
-			this.btnEditar.Text = "Editar";
-			this.btnEditar.UseVisualStyleBackColor = true;
+			this.btnAtualizar.Location = new System.Drawing.Point(94, 393);
+			this.btnAtualizar.Name = "btnAtualizar";
+			this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
+			this.btnAtualizar.TabIndex = 2;
+			this.btnAtualizar.Text = "Atualizar";
+			this.btnAtualizar.UseVisualStyleBackColor = true;
 			// 
 			// btnExcluir
 			// 
-			this.btnExcluir.Location = new System.Drawing.Point(177, 169);
+			this.btnExcluir.Location = new System.Drawing.Point(176, 393);
 			this.btnExcluir.Name = "btnExcluir";
 			this.btnExcluir.Size = new System.Drawing.Size(75, 23);
 			this.btnExcluir.TabIndex = 3;
@@ -89,14 +85,15 @@ namespace InventarioFlora.Formularios
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(284, 261);
+			this.ClientSize = new System.Drawing.Size(1015, 428);
 			this.Controls.Add(this.btnExcluir);
-			this.Controls.Add(this.btnEditar);
+			this.Controls.Add(this.btnAtualizar);
 			this.Controls.Add(this.btnAdicionar);
-			this.Controls.Add(this.dataGridView1);
+			this.Controls.Add(this.dataGridEspecie);
 			this.Name = "FrmEspecie";
 			this.Text = "FrmEspecie";
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			this.Load += new System.EventHandler(this.FrmEspecieLoad);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridEspecie)).EndInit();
 			this.ResumeLayout(false);
 
 		}

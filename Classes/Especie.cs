@@ -12,11 +12,14 @@ namespace InventarioFlora.Classes
 	/// </summary>
 	public class Especie
 	{
+		//[PrimaryKey, AutoIncrement]
 		public int Id { get; set; }
 		public string nomeComum { get; set; }
 		public string nomeCientifico { get; set; }
 		public string familia { get; set; }
 		public string porte { get; set; }
+		public bool nativa { get; set; }
+		public bool ameacada { get; set; }
 		
 		
 		public void Listar() {

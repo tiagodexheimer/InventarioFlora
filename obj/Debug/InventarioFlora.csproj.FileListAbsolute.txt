@@ -4,3 +4,14 @@ C:\Programas\Projetos\InventarioFlora\bin\Debug\InventarioFlora.exe
 C:\Programas\Projetos\InventarioFlora\bin\Debug\InventarioFlora.pdb
 C:\Programas\Projetos\InventarioFlora\obj\Debug\InventarioFlora.exe
 C:\Programas\Projetos\InventarioFlora\obj\Debug\InventarioFlora.pdb
+C:\Programas\Projetos\InventarioFlora\obj\Debug\InventarioFlora.Formularios.FrmEspecie.resources
+C:\Programas\Projetos\InventarioFlora\obj\Debug\InventarioFlora.csproj.GenerateResource.Cache
+C:\Programas\Projetos\InventarioFlora\bin\Debug\EntityFramework.dll
+C:\Programas\Projetos\InventarioFlora\bin\Debug\EntityFramework.SqlServer.dll
+C:\Programas\Projetos\InventarioFlora\bin\Debug\System.Data.SQLite.dll
+C:\Programas\Projetos\InventarioFlora\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Programas\Projetos\InventarioFlora\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Programas\Projetos\InventarioFlora\bin\Debug\EntityFramework.xml
+C:\Programas\Projetos\InventarioFlora\bin\Debug\EntityFramework.SqlServer.xml
+C:\Programas\Projetos\InventarioFlora\bin\Debug\System.Data.SQLite.xml
+C:\Programas\Projetos\InventarioFlora\obj\Debug\InventarioFlora.Formularios.FrmIncluirEspecie.resources
