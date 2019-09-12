@@ -84,6 +84,11 @@ namespace InventarioFlora.Classes
 		
 		public static void Add(Especie especie)
 		{
+			/* Define o vador de especie.ID para inserção do próximo ID */
+			DataTable contaLinha = new DataTable();
+			contaLinha = GetEspecies();
+			especie.Id = contaLinha.Rows.Count + 1;
+			
 			try {
 				using (var cmd = DbConnection().CreateCommand()) {
 					cmd.CommandText = "INSERT INTO Especies(Id, nomeCientifico, nomeComum, familia, porte, nativa, ameacada) " +
