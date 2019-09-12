@@ -71,8 +71,14 @@ namespace InventarioFlora.Formularios
 			// 
 			// dataGridEspecie
 			// 
+			this.dataGridEspecie.AllowUserToAddRows = false;
+			this.dataGridEspecie.AllowUserToDeleteRows = false;
+			this.dataGridEspecie.AllowUserToOrderColumns = true;
+			this.dataGridEspecie.AllowUserToResizeColumns = false;
+			this.dataGridEspecie.AllowUserToResizeRows = false;
 			this.dataGridEspecie.Location = new System.Drawing.Point(12, 12);
 			this.dataGridEspecie.Name = "dataGridEspecie";
+			this.dataGridEspecie.ReadOnly = true;
 			this.dataGridEspecie.Size = new System.Drawing.Size(697, 241);
 			this.dataGridEspecie.TabIndex = 0;
 			// 
@@ -81,7 +87,7 @@ namespace InventarioFlora.Formularios
 			this.btnAdicionar.Location = new System.Drawing.Point(6, 128);
 			this.btnAdicionar.Name = "btnAdicionar";
 			this.btnAdicionar.Size = new System.Drawing.Size(75, 23);
-			this.btnAdicionar.TabIndex = 1;
+			this.btnAdicionar.TabIndex = 10;
 			this.btnAdicionar.Text = "Adicionar";
 			this.btnAdicionar.UseVisualStyleBackColor = true;
 			this.btnAdicionar.Click += new System.EventHandler(this.BtnAdicionarClick);
@@ -91,7 +97,7 @@ namespace InventarioFlora.Formularios
 			this.btnAtualizar.Location = new System.Drawing.Point(87, 128);
 			this.btnAtualizar.Name = "btnAtualizar";
 			this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
-			this.btnAtualizar.TabIndex = 2;
+			this.btnAtualizar.TabIndex = 11;
 			this.btnAtualizar.Text = "Atualizar";
 			this.btnAtualizar.UseVisualStyleBackColor = true;
 			// 
@@ -100,7 +106,7 @@ namespace InventarioFlora.Formularios
 			this.btnExcluir.Location = new System.Drawing.Point(168, 128);
 			this.btnExcluir.Name = "btnExcluir";
 			this.btnExcluir.Size = new System.Drawing.Size(75, 23);
-			this.btnExcluir.TabIndex = 3;
+			this.btnExcluir.TabIndex = 12;
 			this.btnExcluir.Text = "Excluir";
 			this.btnExcluir.UseVisualStyleBackColor = true;
 			// 
@@ -200,7 +206,7 @@ namespace InventarioFlora.Formularios
 			this.comboBPorte.Location = new System.Drawing.Point(113, 97);
 			this.comboBPorte.Name = "comboBPorte";
 			this.comboBPorte.Size = new System.Drawing.Size(121, 21);
-			this.comboBPorte.TabIndex = 15;
+			this.comboBPorte.TabIndex = 7;
 			// 
 			// comboBFamilia
 			// 
@@ -208,7 +214,7 @@ namespace InventarioFlora.Formularios
 			this.comboBFamilia.Location = new System.Drawing.Point(113, 69);
 			this.comboBFamilia.Name = "comboBFamilia";
 			this.comboBFamilia.Size = new System.Drawing.Size(121, 21);
-			this.comboBFamilia.TabIndex = 16;
+			this.comboBFamilia.TabIndex = 6;
 			// 
 			// FrmEspecie
 			// 

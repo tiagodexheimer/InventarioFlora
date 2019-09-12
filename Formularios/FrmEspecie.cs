@@ -62,6 +62,20 @@ namespace InventarioFlora.Formularios
 				DataTable dt = new DataTable();
 				dt = BancoDeDados.GetEspecies();
 				dataGridEspecie.DataSource = dt;
+				
+				//comboBFamilia.Items.Add(dt[i]);
+				foreach (DataRow dataRow in dt.Rows)
+				{
+					//Adiciona na lista Especificando a clouna
+					string informação = dataRow["Familia"].ToString();
+					comboBFamilia.Items.Add(informação);
+				}
+				foreach (DataRow dataRow in dt.Rows)
+				{
+					//Adiciona na lista Especificando a clouna
+					string informação = dataRow["Porte"].ToString();
+					comboBPorte.Items.Add(informação);
+				}
 			}
 			catch (Exception ex)
 			{
