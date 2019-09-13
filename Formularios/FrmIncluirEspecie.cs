@@ -58,7 +58,7 @@ namespace InventarioFlora.Formularios
 				cli.ameacada = Convert.ToBoolean(checkBAmeacada.Checked);
 				
 				BancoDeDados.Add(cli);
-				this.Close();
+				//this.Close();
 				
 			}
 			catch(Exception ex)

@@ -5,6 +5,7 @@
  * Time: 16:22
  * 
  */
+using System.Windows.Forms;
 namespace InventarioFlora.Formularios
 {
 	partial class FrmEspecie
@@ -28,6 +29,7 @@ namespace InventarioFlora.Formularios
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.ComboBox comboBFamilia;
+		private System.Windows.Forms.Button btnLimpar;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -59,12 +61,13 @@ namespace InventarioFlora.Formularios
 			this.checkNativa = new System.Windows.Forms.CheckBox();
 			this.checkAmeacada = new System.Windows.Forms.CheckBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.comboBPorte = new System.Windows.Forms.ComboBox();
+			this.btnLimpar = new System.Windows.Forms.Button();
 			this.comboBFamilia = new System.Windows.Forms.ComboBox();
+			this.comboBPorte = new System.Windows.Forms.ComboBox();
+			this.label4 = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridEspecie)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
@@ -77,10 +80,12 @@ namespace InventarioFlora.Formularios
 			this.dataGridEspecie.AllowUserToResizeColumns = false;
 			this.dataGridEspecie.AllowUserToResizeRows = false;
 			this.dataGridEspecie.Location = new System.Drawing.Point(12, 12);
+			this.dataGridEspecie.MultiSelect = false;
 			this.dataGridEspecie.Name = "dataGridEspecie";
 			this.dataGridEspecie.ReadOnly = true;
 			this.dataGridEspecie.Size = new System.Drawing.Size(697, 241);
 			this.dataGridEspecie.TabIndex = 0;
+			this.dataGridEspecie.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridEspecieCellClick);
 			// 
 			// btnAdicionar
 			// 
@@ -100,10 +105,11 @@ namespace InventarioFlora.Formularios
 			this.btnAtualizar.TabIndex = 11;
 			this.btnAtualizar.Text = "Atualizar";
 			this.btnAtualizar.UseVisualStyleBackColor = true;
+			this.btnAtualizar.Click += new System.EventHandler(this.BtnAtualizarClick);
 			// 
 			// btnExcluir
 			// 
-			this.btnExcluir.Location = new System.Drawing.Point(168, 128);
+			this.btnExcluir.Location = new System.Drawing.Point(269, 128);
 			this.btnExcluir.Name = "btnExcluir";
 			this.btnExcluir.Size = new System.Drawing.Size(75, 23);
 			this.btnExcluir.TabIndex = 12;
@@ -144,6 +150,7 @@ namespace InventarioFlora.Formularios
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.btnLimpar);
 			this.groupBox1.Controls.Add(this.comboBFamilia);
 			this.groupBox1.Controls.Add(this.btnExcluir);
 			this.groupBox1.Controls.Add(this.comboBPorte);
@@ -164,32 +171,32 @@ namespace InventarioFlora.Formularios
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Adicionar/Editar/Deletar Espécie:";
 			// 
-			// label1
+			// btnLimpar
 			// 
-			this.label1.Location = new System.Drawing.Point(6, 16);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(100, 23);
-			this.label1.TabIndex = 10;
-			this.label1.Text = "Nome Científico";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnLimpar.Location = new System.Drawing.Point(169, 128);
+			this.btnLimpar.Name = "btnLimpar";
+			this.btnLimpar.Size = new System.Drawing.Size(75, 23);
+			this.btnLimpar.TabIndex = 14;
+			this.btnLimpar.Text = "Limpar";
+			this.btnLimpar.UseVisualStyleBackColor = true;
+			this.btnLimpar.Click += new System.EventHandler(this.BtnLimparClick);
 			// 
-			// label2
+			// comboBFamilia
 			// 
-			this.label2.Location = new System.Drawing.Point(7, 42);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(100, 23);
-			this.label2.TabIndex = 11;
-			this.label2.Text = "Nome Comum";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.comboBFamilia.Location = new System.Drawing.Point(113, 69);
+			this.comboBFamilia.Name = "comboBFamilia";
+			this.comboBFamilia.Size = new System.Drawing.Size(121, 21);
+			this.comboBFamilia.TabIndex = 6;
+			this.comboBFamilia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBFamiliaKeyPress);
 			// 
-			// label3
+			// comboBPorte
 			// 
-			this.label3.Location = new System.Drawing.Point(7, 68);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(100, 23);
-			this.label3.TabIndex = 12;
-			this.label3.Text = "Família";
-			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.comboBPorte.FormattingEnabled = true;
+			this.comboBPorte.Location = new System.Drawing.Point(113, 97);
+			this.comboBPorte.Name = "comboBPorte";
+			this.comboBPorte.Size = new System.Drawing.Size(121, 21);
+			this.comboBPorte.TabIndex = 7;
+			this.comboBPorte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBPorteKeyPress);
 			// 
 			// label4
 			// 
@@ -200,21 +207,32 @@ namespace InventarioFlora.Formularios
 			this.label4.Text = "Porte";
 			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// comboBPorte
+			// label3
 			// 
-			this.comboBPorte.FormattingEnabled = true;
-			this.comboBPorte.Location = new System.Drawing.Point(113, 97);
-			this.comboBPorte.Name = "comboBPorte";
-			this.comboBPorte.Size = new System.Drawing.Size(121, 21);
-			this.comboBPorte.TabIndex = 7;
+			this.label3.Location = new System.Drawing.Point(7, 68);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(100, 23);
+			this.label3.TabIndex = 12;
+			this.label3.Text = "Família";
+			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// comboBFamilia
+			// label2
 			// 
-			this.comboBFamilia.FormattingEnabled = true;
-			this.comboBFamilia.Location = new System.Drawing.Point(113, 69);
-			this.comboBFamilia.Name = "comboBFamilia";
-			this.comboBFamilia.Size = new System.Drawing.Size(121, 21);
-			this.comboBFamilia.TabIndex = 6;
+			this.label2.Location = new System.Drawing.Point(7, 42);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(100, 23);
+			this.label2.TabIndex = 11;
+			this.label2.Text = "Nome Comum";
+			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// label1
+			// 
+			this.label1.Location = new System.Drawing.Point(6, 16);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(100, 23);
+			this.label1.TabIndex = 10;
+			this.label1.Text = "Nome Científico";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// FrmEspecie
 			// 

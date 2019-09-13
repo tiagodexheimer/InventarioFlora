@@ -7,7 +7,9 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Data.SQLite;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,7 +18,7 @@ namespace InventarioFlora.Classes
 	/// <summary>
 	/// Description of BancoDeDados.
 	/// </summary>
-	public class BancoDeDados
+	public static class BancoDeDados
 	{
 		private static SQLiteConnection sqliteConnection;
 		
@@ -38,7 +40,7 @@ namespace InventarioFlora.Classes
 				throw;
 			}
 		}
-		public static void CriarTabelaSQlite()
+		public static void CriarTabelaEspecie()
 		{
 			try {
 				using (var cmd = DbConnection().CreateCommand()) {
@@ -50,6 +52,101 @@ namespace InventarioFlora.Classes
 				throw ex;
 			}
 		}
+
+		public static void CriarTabelaFamilia()
+		{
+			try {
+				using (var cmd = DbConnection().CreateCommand()) {
+					cmd.CommandText = "CREATE TABLE IF NOT EXISTS Familia(id int, Familia Varchar(100))";
+					cmd.ExecuteNonQuery();
+					//DataTable fam = new DataTable();
+					/*using (StreamReader fam = new StreamReader(File.Open(@"C:\Programas\Familias.txt", FileMode.Open)))
+					{
+						
+						
+						string line = "";
+						while ((line = fam.ReadLine()) != "")
+						{
+				
+							string parts = line;
+							//string fam = System.IO.File.ReadLine();
+						}
+					}
+					DataTable dt = new DataTable();
+					using (System.IO.TextReader tr = File.OpenText((@"C:\Programas\Familias.txt")))
+					{
+						string line;
+						while ((line = tr.ReadLine()) != null)
+						{
+
+							string[] items = line.Trim().Split(' ');
+							if (dt.Columns.Count == 0)
+							{
+								// Create the data columns for the data table based on the number of items
+								// on the first line of the file
+								for (int i = 0; i < items.Length; i++)
+									dt.Columns.Add(new DataColumn("Column" + i, typeof(string)));
+							}
+							dt.Rows.Add(items);
+							using (var cmd2 = DbConnection().CreateCommand()) {
+							cmd2.CommandText = "INSERT INTO Familia(Id, Familia) " +
+								"values (@Id,@Familia)";
+							cmd2.Parameters.AddWithValue("@Id", "NULL");
+							cmd2.Parameters.AddWithValue("@Familia", dt);
+							cmd2.ExecuteNonQuery();
+							Console.WriteLine(dt);
+						}
+
+						}
+						//show it in gridview
+						/*this.GridView1.DataSource = dt;
+						this.GridView1.DataBind();*/
+					
+					
+					
+					
+					using (StreamReader sr = new StreamReader(File.Open(@"C:\Programas\Familias.txt", FileMode.Open)))
+					{
+						
+						
+						string line = "";
+						while ((line = sr.ReadLine()) != "")
+						{
+							string[] parts = line.Split(new string[] { "," }, StringSplitOptions.None);
+							//string cmdTxt = string.Format("INSERT INTO Familia(Id, Familia) VALUES ('{0}','{1}')", "NULL", parts[0]);//", parts[0], parts[1]);
+							using (var cmd2 = DbConnection().CreateCommand()) {
+								cmd2.CommandText = string.Format("INSERT INTO Familia(Id, Familia) VALUES ('{0}','{1}')", "NULL", parts[0]);//", parts[0], parts[1]);
+								cmd2.ExecuteNonQuery();
+								
+								
+							}
+						}
+					}
+				}
+			}
+			catch (Exception ex) {
+				throw ex;
+			}
+			
+		}
+
+
+		public static DataTable GetFamilia()
+		{
+			SQLiteDataAdapter da = null;
+			DataTable dt = new DataTable();
+			try {
+				using (var cmd = DbConnection().CreateCommand()) {
+					cmd.CommandText = "SELECT * FROM Familia";
+					da = new SQLiteDataAdapter(cmd.CommandText, DbConnection());
+					da.Fill(dt);
+					return dt;
+				}
+			} catch (Exception ex) {
+				throw ex;
+			}
+		}
+
 		public static DataTable GetEspecies()
 		{
 			SQLiteDataAdapter da = null;
@@ -65,7 +162,7 @@ namespace InventarioFlora.Classes
 				throw ex;
 			}
 		}
-		
+
 		public static DataTable GetEspecies(int id)
 		{
 			SQLiteDataAdapter da = null;
@@ -81,7 +178,7 @@ namespace InventarioFlora.Classes
 				throw ex;
 			}
 		}
-		
+
 		public static void Add(Especie especie)
 		{
 			/* Define o vador de especie.ID para inserção do próximo ID */
@@ -106,7 +203,7 @@ namespace InventarioFlora.Classes
 				throw ex;
 			}
 		}
-		
+
 		public static void Update(Especie especie)
 		{
 			try {
@@ -128,7 +225,7 @@ namespace InventarioFlora.Classes
 				throw ex;
 			}
 		}
-		
+
 		public static void Delete(int Id)
 		{
 			try {
